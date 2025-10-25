@@ -1,0 +1,282 @@
+/* style.css - global styles for all pages */
+
+/* Reset-ish */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+  --mint:#dff3e8;
+  --green:#66c33a;
+  --pill-green:#66c33a;
+  --nav-text:#ffffff;
+  --accent:#ff7f66;
+  --navy:#071547;
+  --blue:#1e88e5;
+  --muted:#666;
+  --card-green:#8fe07a;
+  --rounded:18px;
+  --container-width:1100px;
+  --max-page-width:1200px;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* Page layout */
+body{
+  color:#222;
+  line-height:1.45;
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Top header / nav */
+.header{
+  background:var(--mint);
+  padding:18px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.container{
+  width:100%;
+  max-width:var(--max-page-width);
+  margin:0 auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+/* logo */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex:0 0 auto;
+}
+.logo img{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  border:4px solid white;
+  background:white;
+}
+
+/* nav pills */
+.nav{
+  margin-left: 20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex:1 1 auto;
+}
+.nav .pill{
+  background:var(--pill-green);
+  color:var(--nav-text);
+  padding:12px 20px;
+  border-radius:26px;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:0.3px;
+  display:inline-block;
+}
+.nav .pill:hover{ opacity:0.9; }
+
+/* right side extra buttons */
+.nav-right{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+/* Courses dropdown (CSS only) */
+.dropdown{
+  position:relative;
+}
+.dropdown .pill{
+  cursor:pointer;
+}
+.dropdown-menu{
+  position:absolute;
+  top:52px;
+  left:0;
+  background:white;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+  padding:10px;
+  min-width:220px;
+  display:none;
+  z-index:20;
+}
+.dropdown-menu a{
+  display:block;
+  padding:10px 12px;
+  color:#1b1b1b;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+}
+.dropdown-menu a:hover{ background:#f0f6f3; }
+
+/* show menu on hover (works for desktop) */
+.dropdown:hover .dropdown-menu{ display:block; }
+
+/* Hero banner */
+.hero{
+  width:100%;
+  max-width:var(--container-width);
+  margin:28px auto;
+  border-radius:30px;
+  overflow:hidden;
+  position:relative;
+}
+.hero .hero-img{
+  width:100%;
+  height:260px;
+  background-image: url('https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s='); 
+  background-size:cover;
+  background-position:center;
+  display:block;
+}
+.hero .hero-text{
+  position:absolute;
+  left:48px;
+  top:38px;
+  color:white;
+  font-size:48px;
+  line-height:1.02;
+  font-weight:300;
+  text-shadow:0 6px 18px rgba(0,0,0,0.45);
+  max-width:70%;
+}
+
+/* content area */
+.content{
+  width:100%;
+  max-width:var(--container-width);
+  margin:28px auto;
+  padding:18px;
+}
+
+/* two-column area used on course detail */
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 380px;
+  gap:28px;
+  align-items:start;
+}
+.two-col{
+  align-self: start;
+}
+
+/* info cards like rounded boxes in wireframe */
+.info-card{
+  background: #dff3e8;
+  border-radius:28px;
+  padding:22px;
+  color:#10321a;
+  box-shadow: 0 3px 8px rgba(3,3,3,0.03);
+}
+.info-card h3{ color:var(--blue); text-align:center; margin-bottom:6px; font-size:20px; }
+
+/* green types card */
+.types-card{
+  background:var(--pill-green);
+  color:white;
+  border-radius:28px;
+  padding:22px;
+  margin-top:22px;
+  font-weight:600;
+}
+
+/* right column course image and book button */
+.course-panel{
+  background:white;
+  padding:12px;
+  border-radius:18px;
+  text-align:center;
+}
+.course-panel img{ width:100%; height:300px; object-fit:cover; border-radius:12px; }
+.price-pill{
+  display:inline-block;
+  background:#8ee0ff;
+  color:#033047;
+  padding:6px 14px;
+  border-radius:10px;
+  margin-bottom:10px;
+  font-weight:700;
+}
+.book-btn{
+  display:inline-block;
+  margin-top:16px;
+  padding:12px 26px;
+  background:var(--accent);
+  color:white;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+/* Back arrow */
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:#000;
+  text-decoration:none;
+  font-weight:700;
+  margin-bottom:10px;
+}
+.back-icon{
+  display:inline-block;
+  width:44px;
+  height:44px;
+  background:#000;
+  border-radius:8px;
+  color:white;
+  font-size:22px;
+  line-height:44px;
+  text-align:center;
+}
+
+/* Our Values section (continuation of homepage) */
+.our-values{
+  text-align:center;
+  padding:40px 22px;
+}
+.our-values h2{ color:var(--accent); margin-bottom:18px; font-size:20px; }
+.vision, .mission{
+  max-width:920px;
+  margin:10px auto 28px auto;
+  color:#333;
+}
+
+/* navy footer - shows on all pages */
+.site-footer{
+  background:var(--navy);
+  color: #e6eeff;
+  padding:28px 22px;
+  margin-top:34px;
+}
+.footer-grid{
+  width:100%;
+  max-width:var(--container-width);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.footer-grid h4{ color:white; margin-bottom:14px; }
+.footer-grid a{ color:rgba(255,255,255,0.8); display:block; text-decoration:none; margin:6px 0; }
+.footer-bottom{
+  max-width:var(--container-width);
+  margin:18px auto 0 auto;
+  color:rgba(255,255,255,0.6);
+  font-size:13px;
+}
+
+/* small screen responsiveness */
+@media (max-width:900px){
+  .two-col{ grid-template-columns: 1fr; }
+  .hero .hero-text{ font-size:34px; left:20px; top:20px; }
+  .hero .hero-img{ height:200px; }
+  .nav{ display:none; } /* simple collapse for mobile - for assignment this is fine */
+  .container{ justify-content:space-between; }
+}
