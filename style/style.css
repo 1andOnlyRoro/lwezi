@@ -272,7 +272,8 @@ body{
   font-weight:700;
 }
 
-{/*The apply now button style(named as book-btn)*/}
+
+  /*The apply now button style(named as book-btn)*/
 .book-btn{
   display:inline-block;
   margin-top:16px;
